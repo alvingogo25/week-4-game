@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Droid RPG</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+  <!-- general layout
+  div for center title -->
+  <header class="container jumbotron">
+    <h1 class="text-center">Droid Fight</h1>
+  </header>
+  <!-- div for character staging area -->
+  <div class="container">
+    <div id="staging" class="container col-lg-12">
+      <h3 class="text-center">Pick your Droid</h3>
+    </div>
+    <!-- div for battle area -->
+    <div class="row">
+      <!-- user character on left -->
+      <div id="userChar" class="container col-lg-4">
+        <p>user area</p>
+        <button id="attack" class="btn btn-primary" onclick="attack()">ATTACK</button>
+      </div>
+      <!-- fight stats in center -->
+      <!-- div for wins and loses -->
+      <div id="stats" class="container col-lg-4">
+        <p>stats area</p>
+      </div>
+      <!-- user choosen enemy on right -->
+      <div id="enemy" class="container col-lg-4">
+        <p>enemy area</p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- jquery stuff -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="assets/javascript/game.js"></script>
+
+
+</body>
+</html>
