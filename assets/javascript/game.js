@@ -1,71 +1,48 @@
-$(document).ready(function() {
 
-// let player = {
-//   health: 100,
-//   attack: 20,
-// }
-//
-// let opponent = {
-//   health: 100,
-//   attack: 20,
-// }
-//
-// const attack = function() {
-//   opponent.health -= player.attack;
-//   player.health -= opponent.attack;
-//   printToScreen();
-// }
-//
-// const printToScreen = function() {
-//   $("#enemy").html(opponent.health);
-//   $("#userChar").html(player.health);
-// }
-//
-// printToScreen();
+var makeRand = function() {
+  var a = Math.floor((Math.random() * 120) + 19);
+  $('#randomNumber').text(a);
+  rand = $('#randomNumber').html();
 
-
-let characters = {
-  // VARIABLES
-  'r2d2': {
-    name: "R2-D2",
-    hp: 90,
-    ap: 15,
-    imageUrl: "assets/images/r2d2.png"
-  },
-  'bb8': {
-    name: "BB-8",
-    hp: 95,
-    ap: 10,
-    imageUrl: "assets/images/bb8.png"
-  },
-  'droid': {
-    name: "Battle Droid",
-    hp: 100,
-    ap: 15,
-    imageUrl: "assets/images/droid.png"
-  },
-  'bb9e': {
-    name: "BB-9E",
-    hp: 120,
-    ap: 20,
-    imageUrl: "assets/images/bb9e.png"
+  for (var i = 0; i < 4; i++){
+    x = Math.floor((Math.random() * 12) + 1)
+    $("#crystal" + i ).data('number', x);
   }
-};
-
-var wins: 0;
-var loses: 0;
-
-var charStage = function() {
-  var charDiv = $('#staging').add('div').attr("value", characters.name);
-  var charName = $('<div>').text(characters.name);
-  var charImg = $('<img>').attr('src', characters.imageUrl);
-  var charHP = $('<div>').text(characters.hp);
-  charDiv.append(charName).append(charImg).append(charHP);
-
+  userTarget = 0;
+  $('#userTotal').empty();
 }
 
+makeRand();
 
+var rand;
+var userTarget = 0;
+var wins = 0;
+var loses = 0;
 
+$('.crystal').on('click', function() {
+  var add = $(this).data('number')
+  userTarget += add
+  $('#userTotal').text(userTarget);
+  winLose();
+});
 
+var winLose = function() {
+  if (userTarget == rand) {
+    wins++;
+    $('#win').text(wins);
+    $('#message').html("<div class='alert alert-success'>You Win!</div>");
+    setTimeout(alertHide, 3000);
+    makeRand();
+  }
+  if (userTarget > rand) {
+    loses++;
+    $('#lose').text(loses);
+    $('#message').html("<div class='alert alert-danger'>you lose...</div>");
+    setTimeout(alertHide, 3000);
+    makeRand();
+  }
+}
 
+var alertHide = function() {
+  $('#message').empty();
 }
