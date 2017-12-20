@@ -23,7 +23,7 @@ $('.crystal').on('click', function() {
   var add = $(this).data('number')
   userTarget += add
   $('#userTotal').text(userTarget);
-  winLose();
+  setTimeout(winLose, 2000);
 });
 
 var winLose = function() {
@@ -32,14 +32,14 @@ var winLose = function() {
     $('#win').text(wins);
     $('#message').html("<div class='alert alert-success'>You Win!</div>");
     setTimeout(alertHide, 3000);
-    makeRand();
+    setTimeout(makeRand, 3000);
   }
   if (userTarget > rand) {
     loses++;
     $('#lose').text(loses);
     $('#message').html("<div class='alert alert-danger'>you lose...</div>");
     setTimeout(alertHide, 3000);
-    makeRand();
+    setTimeout(makeRand, 3000);
   }
 }
 

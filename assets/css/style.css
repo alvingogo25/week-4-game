@@ -2,3 +2,11 @@
   width: 93px;
   height: 93px;
 }
+
+.number {
+  font-size: 50px;
+}
+
+.bignumber {
+  font-size: 100px;
+}
