@@ -1,5 +1,4 @@
-
-var makeRand = function() {
+function makeRand() {
   var a = Math.floor((Math.random() * 120) + 19);
   $('#randomNumber').text(a);
   rand = $('#randomNumber').html();
@@ -23,10 +22,10 @@ $('.crystal').on('click', function() {
   var add = $(this).data('number')
   userTarget += add
   $('#userTotal').text(userTarget);
-  setTimeout(winLose, 2000);
+  winLose();
 });
 
-var winLose = function() {
+function winLose() {
   if (userTarget == rand) {
     wins++;
     $('#win').text(wins);
@@ -43,6 +42,6 @@ var winLose = function() {
   }
 }
 
-var alertHide = function() {
+function alertHide() {
   $('#message').empty();
 }
