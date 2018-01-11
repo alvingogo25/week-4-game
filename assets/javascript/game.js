@@ -19,9 +19,11 @@ var wins = 0;
 var loses = 0;
 
 $('.crystal').on('click', function() {
+  if (userTarget < rand){
   var add = $(this).data('number')
   userTarget += add
   $('#userTotal').text(userTarget);
+  }
   winLose();
 });
 
